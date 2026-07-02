@@ -1,17 +1,18 @@
-# Multi-Robot Warehouse Navigation — Classical Planning & Deep RL
+# Warehouse Robot Navigation — Occupancy-Grid Mapping & Path Planning
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AsserGharib1/WarehouseRobotPathPlanning/blob/main/warehouse_path_planning.ipynb)
 [![View on nbviewer](https://img.shields.io/badge/view%20full%20notebook-nbviewer-F37626?logo=jupyter&logoColor=white)](https://nbviewer.org/github/AsserGharib1/WarehouseRobotPathPlanning/blob/main/warehouse_path_planning.ipynb)
 
 
-Path planning for warehouse order-fulfillment robots on an occupancy-grid map: classical **A\*** and **Dijkstra** planners with dynamic-obstacle replanning, benchmarked against a **Deep Q-Network** multi-robot controller.
+Path planning for warehouse order-fulfillment robots on an occupancy-grid map: classical **A\*** and **Dijkstra** planners benchmarked across 20 test cases, with automatic replanning around dynamic obstacles (moving workers) simulated in pygame.
 
 ## Highlights
 
 - **Occupancy-grid mapping**: environment explored and rasterized to a 0/1 grid (`explored_ogm.npy`, `manual_ogm.npy`), visualized with pygame.
-- **A\* vs Dijkstra benchmark** across 20 test cases, including dynamic obstacles that force online replanning.
-- **Five-robot DQN controller** trained with experience replay, target networks, and reward shaping; hyperparameters tuned with **PSO** — reducing collisions versus the classical baseline.
-- Full experiment figures in `figures/` and a detailed write-up in `docs/report.pdf`.
+- **A\* vs Dijkstra benchmark across 20 test cases**, comparing computation time and path length per case (full comparison table in the report).
+- **Dynamic-obstacle replanning**: moving workers block precomputed paths; the robot detects the blockage and replans online — mimicking a realistic warehouse floor.
+- Multi-target order fulfillment on the mapped grid, visualized step-by-step in pygame.
+- Detailed write-up with figures in `docs/report.pdf`.
 
 ## Grid maps
 
