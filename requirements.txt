@@ -1,4 +1,6 @@
-pygame
-numpy
-matplotlib
-pillow
+# Version ranges match the APIs used in this project (developed 2025-2026).
+# Lower bounds are required, upper caps guard against breaking major releases.
+pygame>=2.5,<3
+numpy>=1.26,<3
+matplotlib>=3.8,<4
+pillow>=10
